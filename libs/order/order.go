@@ -1,8 +1,6 @@
 // Package order proides functionality for managing orders.
 package order
 
-import "time"
-
 type Status string
 
 const (
@@ -21,15 +19,13 @@ const (
 var id = 0
 
 type Order struct {
-	Status       Status
-	OrderType    Role
-	ID           int
-	completeTime time.Time
+	Status    Status
+	OrderType Role
+	ID        int
 }
 
 func (order *Order) SetOrderComplete() {
 	order.Status = Complete
-	order.completeTime = time.Now()
 }
 
 func (order *Order) SetOrderProcessing() {
